@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Academia APE — Plataforma Moderna de Estudio</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  
+  <header class="navbar">
+    <div class="nav-container">
+      <!-- Marca -->
+      <a href="#inicio" class="brand" data-view="inicio">
+        <div class="brand-badge">APE</div>
+        <div class="brand-info">
+          <span class="brand-title">ACADEMIA APE</span>
+          <span class="brand-tag">Asesoría Personal en Estudio</span>
+        </div>
+      </a>
+
+      <!-- Navegación Central + Combo Box de Bloques Académicos -->
+      <nav class="nav-links">
+        <a href="#inicio" class="nav-item active" data-view="inicio">Inicio</a>
+        <a href="#pre-univ" class="nav-item" data-view="pre-univ">Pre Univ</a>
+        <a href="#tecnico" class="nav-item" data-view="tecnico">Técnico</a>
+
+        <!-- COMBO BOX DE BLOQUES ACADÉMICOS Y CURSOS -->
+        <div class="combo-wrapper">
+          <label for="academicBlockSelect" class="sr-only">Bloques Académicos</label>
+          <select id="academicBlockSelect" class="academic-combobox">
+            <option value="" disabled selected>📚 Explorar Bloques / Cursos...</option>
+            <optgroup label="🎓 Bloque Universitario y Pre">
+              <option value="pre-univ|ulima">Nivelación Universidad de Lima (ULima)</option>
+              <option value="pre-univ|upc">Nivelación UPC</option>
+              <option value="pre-univ|udep">Preparación UDEP / UP</option>
+              <option value="pre-univ|utec">Cálculo y Ciencias UTEC</option>
+              <option value="pre-univ|taa">Examen Becas y Semibecas (TAA)</option>
+            </optgroup>
+            <optgroup label="💻 Bloque Herramientas Digitales (Técnico)">
+              <option value="tecnico|Excel">Excel Empresarial y Financiero</option>
+              <option value="tecnico|Power BI">Power BI & Dashboards</option>
+              <option value="tecnico|Office">Microsoft Office Completo</option>
+              <option value="tecnico|R">Lenguaje R para Estadística</option>
+              <option value="tecnico|Automatiz">Automatización de Procesos</option>
+            </optgroup>
+          </select>
+        </div>
+
+        <a href="#nosotros" class="nav-item" data-view="inicio">Nosotros</a>
+      </nav>
+
+      <!-- Acciones de Usuario (Log in / Mi cuenta / Carrito) -->
+      <div class="nav-actions">
+        <button class="btn-cart-pill" data-view="checkout" title="Ver resumen de compra">
+          🛒 <span id="cartBadge">1</span>
+        </button>
+        <button class="btn-account" id="accountBtn" data-view="checkout">
+          Mi cuenta / Log in
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- =======================================================================
+         VISTA 1: MAIN PAGE
+         ======================================================================= -->
+    <section id="view-inicio" class="view-section active">
+      
+      <!-- Hero Moderno a 2 Columnas -->
+      <div class="hero-modern">
+        <div class="hero-container">
+          <div class="hero-text">
+            <span class="pill-badge">Temporada Académica 2026</span>
+            <h1>Tu futuro comienza aquí</h1>
+            <p>
+              Potencia tu rendimiento académico con asesoría personalizada para las mejores universidades del país y domina las herramientas digitales más demandadas del mundo laboral.
+            </p>
+            <div class="hero-quick-selector">
+              <select id="heroComboSelect" class="hero-combobox">
+                <option value="pre-univ">Quiero Preparación y Nivelación Universitaria</option>
+                <option value="tecnico">Quiero Cursos de Herramientas Digitales (Excel, Power BI, R)</option>
+                <option value="checkout">Ir directo a Matrícula / Pago</option>
+              </select>
+              <button class="btn-primary" id="heroGoBtn">Ir ahora →</button>
+            </div>
+          </div>
+
+          <!-- Ilustración Derecha (Imagen de Estudiante con Laptop) -->
+          <div class="hero-visual">
+            <div class="illustration-card">
+              <div class="floating-stat stat-top">📈 +95% Aprobados</div>
+              
+              <!-- Cambia el atributo "src" por la ruta de tu imagen local (ej: "img/estudiante.jpg") -->
+              <img 
+                src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=800&q=80" 
+                alt="Estudiantes preparándose en Academia APE" 
+                class="hero-student-img" 
+              />
+
+              <div class="floating-stat stat-bottom">⚡ Clases en vivo y a tu ritmo</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Dos Grandes Bloques Inferiores -->
+      <div class="container dual-blocks-section">
+        <div class="dual-grid">
+          
+          <!-- Bloque Izquierdo: Preparación Universitaria -->
+          <article class="feature-block">
+            <div class="block-header">
+              <span class="block-tag">Bloque Académico</span>
+              <h2>Preparación universitaria</h2>
+            </div>
+            <p class="block-subtitle">Preparación, becas (TAA) y nivelación especializada para:</p>
+            
+            <!-- Círculos de Universidades (ULima - UPC - UDEP - UTEC) -->
+            <div class="uni-badges-row">
+              <div class="uni-circle" title="Universidad de Lima">ULima</div>
+              <span class="uni-connector">—</span>
+              <div class="uni-circle" title="Universidad Peruana de Ciencias Aplicadas">UPC</div>
+              <span class="uni-connector">—</span>
+              <div class="uni-circle" title="Universidad de Piura">UDEP</div>
+              <span class="uni-connector">—</span>
+              <div class="uni-circle" title="UTEC / UP">UTEC</div>
+            </div>
+
+            <div class="block-footer">
+              <button class="btn-primary" data-view="pre-univ">Ver programas</button>
+            </div>
+          </article>
+
+          <!-- Bloque Derecho: Cursos Específicos -->
+          <article class="feature-block">
+            <div class="block-header">
+              <span class="block-tag tag-orange">Bloque Laboral & Técnico</span>
+              <h2>Cursos específicos</h2>
+            </div>
+            <p class="block-subtitle">Domina el mundo laboral con herramientas prácticas:</p>
+
+            <!-- Íconos de Herramientas (Excel - Power BI - Automatización) -->
+            <div class="tools-icons-row">
+              <div class="tool-icon-box" data-view="tecnico">
+                <div class="tool-glyph excel-glyph">X</div>
+                <span>Excel</span>
+              </div>
+              <span class="uni-connector">—</span>
+              <div class="tool-icon-box" data-view="tecnico">
+                <div class="tool-glyph bi-glyph">📊</div>
+                <span>Power BI</span>
+              </div>
+              <span class="uni-connector">—</span>
+              <div class="tool-icon-box" data-view="tecnico">
+                <div class="tool-glyph code-glyph">⚙️</div>
+                <span>R & Auto</span>
+              </div>
+            </div>
+
+            <div class="block-footer">
+              <button class="btn-outline-navy" data-view="tecnico">Explorar cursos</button>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- =======================================================================
+         VISTA 2: SUBPÁGINA TÉCNICO (Herramientas Digitales)
+         ======================================================================= -->
+    <section id="view-tecnico" class="view-section">
+      <div class="subhero-header">
+        <div class="container">
+          <h1>Domina Herramientas Digitales</h1>
+          <p>Explora y compra cursos prácticos orientados a resultados</p>
+        </div>
+      </div>
+
+      <div class="container catalog-layout">
+        <!-- Sidebar Izquierdo (Categorías y Herramientas) -->
+        <aside class="catalog-sidebar">
+          <div class="filter-group">
+            <h3>Categorías</h3>
+            <label class="checkbox-label">
+              <input type="checkbox" checked class="tech-filter" value="all" /> Todos los niveles
+            </label>
+            <label class="checkbox-label">
+              <input type="checkbox" class="tech-filter" value="Analítica" /> Análisis de Datos
+            </label>
+            <label class="checkbox-label">
+              <input type="checkbox" class="tech-filter" value="Productividad" /> Productividad y Gestión
+            </label>
+          </div>
+
+          <hr class="sidebar-divider" />
+
+          <div class="filter-group">
+            <h3>Herramientas</h3>
+            <label class="radio-label">
+              <input type="radio" name="toolRadio" value="all" checked /> Ver todas
+            </label>
+            <label class="radio-label">
+              <input type="radio" name="toolRadio" value="Excel" /> Excel
+            </label>
+            <label class="radio-label">
+              <input type="radio" name="toolRadio" value="Power BI" /> Power BI
+            </label>
+            <label class="radio-label">
+              <input type="radio" name="toolRadio" value="Office" /> Office
+            </label>
+            <label class="radio-label">
+              <input type="radio" name="toolRadio" value="R" /> Lenguaje R
+            </label>
+            <label class="radio-label">
+              <input type="radio" name="toolRadio" value="Automatiz" /> Automatización
+            </label>
+          </div>
+        </aside>
+
+        <!-- Grilla de Cursos -->
+        <div class="catalog-main">
+          <div class="courses-top-row" id="techTopGrid"></div>
+          <div class="courses-bottom-row" id="techBottomGrid"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =======================================================================
+         VISTA 3: SUBPÁGINA PRE-UNIV / UNIVERSITARIO
+         ======================================================================= -->
+    <section id="view-pre-univ" class="view-section">
+      <div class="subhero-header">
+        <div class="container">
+          <h1>Preparación y Nivelación Universitaria</h1>
+          <p>Programas por universidad y preparación para Examen de Becas / (TAA)</p>
+        </div>
+      </div>
+
+      <div class="container">
+        <div class="uni-filter-bar">
+          <span>Filtrar por institución:</span>
+          <button class="chip active" data-unifilter="all">Todas</button>
+          <button class="chip" data-unifilter="ulima">ULima</button>
+          <button class="chip" data-unifilter="upc">UPC</button>
+          <button class="chip" data-unifilter="udep">UDEP / UP</button>
+          <button class="chip" data-unifilter="utec">UTEC</button>
+          <button class="chip" data-unifilter="taa">Becas (TAA)</button>
+        </div>
+
+        <div class="courses-bottom-row" id="uniCoursesGrid"></div>
+      </div>
+    </section>
+
+    <!-- =======================================================================
+         VISTA 4: SUBPÁGINA CHECKOUT / PAGO (Paso 3/4)
+         ======================================================================= -->
+    <section id="view-checkout" class="view-section">
+      <div class="container checkout-wrapper">
+        
+        <!-- Stepper Superior (Paso: 3/4) -->
+        <div class="stepper-header">
+          <span class="step-counter">Paso: 3/4</span>
+          <div class="stepper-bar">
+            <div class="step-node completed">1) Resumen carrito</div>
+            <div class="step-chevron">❯</div>
+            <div class="step-node completed">2) Revisión</div>
+            <div class="step-chevron">❯</div>
+            <div class="step-node current">3) Pago</div>
+            <div class="step-chevron">❯</div>
+            <div class="step-node">4) Confirmación</div>
+          </div>
+        </div>
+
+        <!-- 2 Columnas Principales: Resumen Pedido y Método Pago -->
+        <div class="checkout-grid">
+          
+          <!-- Izquierda: Resumen Pedido -->
+          <div class="checkout-card">
+            <h2>Resumen pedido</h2>
+            <div class="order-items-list" id="checkoutItemsList"></div>
+
+            <div class="order-total-bar">
+              <span>Total</span>
+              <strong id="checkoutTotalAmount">US$: 70.00</strong>
+            </div>
+          </div>
+
+          <!-- Derecha: Método Pago -->
+          <div class="checkout-card">
+            <h2>Método Pago</h2>
+            
+            <div class="payment-methods-row">
+              <button type="button" class="pay-method-btn active">VISA</button>
+              <span class="method-sep">—</span>
+              <button type="button" class="pay-method-btn">Mastercard</button>
+              <span class="method-sep">—</span>
+              <button type="button" class="pay-method-btn yape-btn">Yape</button>
+            </div>
+
+            <form class="payment-form" id="paymentForm">
+              <div class="input-field">
+                <label>N° tarjeta</label>
+                <input type="text" placeholder="4557 •••• •••• 8910" maxlength="19" required />
+              </div>
+              <div class="input-field">
+                <label>Nombre</label>
+                <input type="text" placeholder="Nombre como figura en la tarjeta" required />
+              </div>
+              <div class="input-row-2">
+                <div class="input-field">
+                  <label>Exp</label>
+                  <input type="text" placeholder="MM/AA" maxlength="5" required />
+                </div>
+                <div class="input-field">
+                  <label>CVV</label>
+                  <input type="password" placeholder="•••" maxlength="4" required />
+                </div>
+              </div>
+              <button type="submit" class="btn-secure-pay">
+                🔒 Proceder pago seguro
+              </button>
+            </form>
+          </div>
+
+        </div>
+
+        <!-- Sección Inferior: Te podría interesar -->
+        <div class="upsell-section">
+          <h3>Te podría interesar :</h3>
+          <div class="upsell-grid">
+            <div class="upsell-card">
+              <div class="upsell-thumb">📊</div>
+              <div class="upsell-info">
+                <strong>Power BI Avanzado</strong>
+                <span>Complementa tus reportes con dashboards interactivos.</span>
+              </div>
+              <button class="btn-sm-add" onclick="seleccionarCursoParaCheckout('Power BI Avanzado', 45)">+ US$ 45</button>
+            </div>
+            <div class="upsell-card">
+              <div class="upsell-thumb">📈</div>
+              <div class="upsell-info">
+                <strong>Estadística con R</strong>
+                <span>Análisis de datos para investigación y negocios.</span>
+              </div>
+              <button class="btn-sm-add" onclick="seleccionarCursoParaCheckout('Estadística con R', 50)">+ US$ 50</button>
+            </div>
+            <div class="upsell-card">
+              <div class="upsell-thumb">🎓</div>
+              <div class="upsell-info">
+                <strong>Pack Nivelación Cálculo</strong>
+                <span>Sesiones personalizadas de refuerzo universitario.</span>
+              </div>
+              <button class="btn-sm-add" onclick="seleccionarCursoParaCheckout('Pack Nivelación Cálculo', 60)">+ US$ 60</button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- MODAL VISUAL DE DETALLE DE CURSO -->
+  <div class="modal-overlay" id="courseModal">
+    <div class="modal-box">
+      <button class="modal-close" id="closeModalBtn">✕</button>
+      <span class="pill-badge" id="modalCategory">Herramientas Digitales</span>
+      <h2 id="modalTitle">Curso</h2>
+      <p id="modalDesc">Descripción detallada del programa académico.</p>
+      <div class="modal-footer">
+        <strong class="modal-price" id="modalPrice">US$ 70.00</strong>
+        <button class="btn-primary" id="modalAddBtn">+ Añadir al Carrito</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 1. Librería jQuery (CDN Oficial) -->
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  
+  <!-- 2. Script principal escrito con jQuery -->
+  <script src="script.js"></script>
+</body>
+</html>
